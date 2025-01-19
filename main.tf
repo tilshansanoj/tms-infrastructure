@@ -77,29 +77,29 @@ module "service_discovery" {
   health_check_failure_threshold = 1
 }
 
-module "alb" {
-  source = "./modules/alb"
+# module "alb" {
+#   source = "./modules/alb"
 
-  lb_name                = "my-alb"
-  internal               = false
-  security_group_ids     = [module.security_groups.public_security_group]
-  subnet_ids             = module.vpc.public_subnet_ids
-  target_group_name      = "my-target-group"
-  target_group_port      = 3003
-  target_group_protocol  = "HTTP"
-  vpc_id                 = module.vpc.vpc_id
-  target_type            = "ip"
-  health_check_protocol  = "HTTP"
-  health_check_path      = "/"
-  health_check_interval  = 30
-  health_check_timeout   = 5
-  healthy_threshold      = 2
-  unhealthy_threshold    = 2
-  listener_port          = 80
-  listener_protocol      = "HTTP"
-  vpc_name         = "my-vpc"
-  public_subnet_ids = module.vpc.public_subnet_ids
-}
+#   lb_name                = "my-alb"
+#   internal               = false
+#   security_group_ids     = [module.security_groups.public_security_group]
+#   subnet_ids             = module.vpc.public_subnet_ids
+#   target_group_name      = "my-target-group"
+#   target_group_port      = 3003
+#   target_group_protocol  = "HTTP"
+#   vpc_id                 = module.vpc.vpc_id
+#   target_type            = "ip"
+#   health_check_protocol  = "HTTP"
+#   health_check_path      = "/"
+#   health_check_interval  = 30
+#   health_check_timeout   = 5
+#   healthy_threshold      = 2
+#   unhealthy_threshold    = 2
+#   listener_port          = 80
+#   listener_protocol      = "HTTP"
+#   vpc_name         = "my-vpc"
+#   public_subnet_ids = module.vpc.public_subnet_ids
+# }
 
 module "ecs_fargate_service" {
   source = "./modules/ecs_fargate"
