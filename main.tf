@@ -127,8 +127,8 @@ module "ecs_cluster" {
 module "ecs_task_definition" {
   source             = "./modules/ecs_task_definition"
   family             = "my-fargate-task"
-  cpu                = "512" # 256 vCPU units
-  memory             = "1024" # 512 MB memory
+  cpu                = "512" 
+  memory             = "1024" 
   execution_role_arn = "arn:aws:iam::058264177299:role/tms-ecs-task-role"
 
 }

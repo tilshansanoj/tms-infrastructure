@@ -19,17 +19,17 @@ output "db_subnet_group" {
 #   value       = module.elasticache
 # }
 
-output "alb_arn" {
-  value = module.alb.alb_arn
-}
+# output "alb_arn" {
+#   value = module.alb.alb_arn
+# }
 
-output "alb_dns_name" {
-  value = module.alb.alb_dns_name
-}
+# output "alb_dns_name" {
+#   value = module.alb.alb_dns_name
+# }
 
-output "aws_lb_target_group" {
-  value = module.alb.target_group_arn
-}
+# output "aws_lb_target_group" {
+#   value = module.alb.target_group_arn
+# }
 
 output "task_execution_role_arn" {
   value = module.iam_role.iam_role_arn
